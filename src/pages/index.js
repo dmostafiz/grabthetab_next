@@ -262,7 +262,7 @@ export default function Home() {
                   <h2>Our Vehicle is the second largest
                     investment after our home</h2>
                   <span>Fill out the form below for more information</span>
-                  <form method="post" action="">
+                  <div>
 
                     <input type="hidden" name="sponsor_username" defaultValue="{{ $sponsor }}" />
                     <div className="form-group">
@@ -279,8 +279,8 @@ export default function Home() {
                     </div>
                     <p>Your Information will never be shared. Unsubscribe any time.</p>
 
-                    <button type="submit" onClick={handleSubmit} className="btn btn-primary">SUBMIT NOW</button>
-                  </form>
+                    <button onClick={handleSubmit} className="btn btn-primary">SUBMIT NOW</button>
+                  </div>
                 </div>
               </div>
             </div>
