@@ -7,18 +7,22 @@ export default function HomeLayout({ children }) {
             <Head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
-                <title>GO20X - Xcelerate International</title>
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-                <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-                <link rel="stylesheet" type="text/css" href="/css/style.css" />
-                <link rel="stylesheet" type="text/css" href="/css/responsive.css" />
-               
-                <script src="/js/jquery.js"></script>
-                <script src="/js/bootstrap.min.js"></script>
-                <script src="/js/custom.js"></script>
-            </Head>
+                <title>GrabTheTab</title>
+                <meta name="description" content />
+                <meta name="title" content />
+                <meta name="keywords" content />
+                <link href="/asset3/css/bootstrap.min.css" rel="stylesheet" />
+                <link href="/asset3/css/style.css" rel="stylesheet" />
+                <link href="/asset3/fonts/fonts.css" rel="stylesheet" />
+                <link href="/asset3/css/responsive.css" rel="stylesheet" />
+                <link rel="icon" type="image/x-icon" href="/favicon.webp" />
+                <link href="/asset3/css/fontawesome.min.css" rel="stylesheet" />
 
+                <script src="/asset3/js/jquery-3.6.0.min.js"></script>
+                <script src="/asset3/js/bootstrap.bundle.min.js"></script>
+                <script src="/asset3/js/ofi.min.js"></script>
+                <script src="/asset3/js/script.js"></script>
+            </Head>
 
             {children}
         </>

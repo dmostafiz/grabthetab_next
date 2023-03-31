@@ -15,7 +15,7 @@ export default function Home() {
     const sponsor = Cookies.get('sponsor')
     if (!sponsor) {
       onOpen()
-    }else{
+    } else {
       setSponsed(sponsor)
     }
   }, [])
@@ -76,7 +76,7 @@ export default function Home() {
       return onOpen()
     }
 
-    if (!firstName && !lastName && !email && !phoneNumber) {
+    if (!firstName || !lastName || !email || !phoneNumber) {
       return toast({
         title: 'All fields are required!',
         description: "",
@@ -92,7 +92,7 @@ export default function Home() {
       email: email,
       phone_number: phoneNumber,
       sponsorId: sponsor,
-      contactHost: 'go20x'
+      contactHost: 'grabthetab'
     })
 
     if (res?.data?.ok) {
@@ -119,277 +119,244 @@ export default function Home() {
 
   return (
     <HomeLayout>
-      <div className="main-wrpper">
-        <section className="banner-wrapper">
+      <header className="header" style={{ padding: 10 }}>
+        <div style={{ padding: '0 20px' }}>
+          <img src="https://xceleratefueltabs.com/landing/images/logo.png" />
+          <a href="/login" style={{ float: 'right', padding: 9, background: 'white', textDecoration: 'none', color: 'black', borderRadius: 10, marginTop: 10 }}>Login
+            Now</a>
+        </div>
+      </header>
+      <div className="content">
+        <div className="main-banner">
           <div className="container">
-            {sponsord && <div className="headtitle">
-              <h6>Referred by: {sponsord}</h6>
-            </div>}
-            <div className="row">
-              <div className="col-md-6 col-sm-12">
-                <div className="banner-txt">
-                  <h3>This $20 business changes</h3>
-                  <h1>EVERYTHING</h1>
-                  <h4>A Global Opportunity</h4>
-                  <h2>WATCH THIS VIDEO</h2>
-                  <p>Network Marketing will never be the same</p>
-                  <div className="video-bx">
-                    <div className="youtube-video">
-                      <iframe width="100%" height={420} src="https://www.youtube.com/embed/65JiGVxLvlg" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+            <div className="main-title">
+              <h2><span>Get YOUR</span> piece of the <span>$13 BILION</span> AutoCare Industry</h2>
+            </div>
+            <div className="autocare">
+              <div className="autocare-list">
+                <div className="autocare-block block1">
+                  <div className="icon">
+                    <img src="/asset3/images/care-icon.png" alt="care" className="img-fluid" />
+                  </div>
+                  <div className="text">
+                    <h6>Cleans Fuel
+                      System &amp; Engine</h6>
+                    <p>Increase fuel efficiency and
+                      reduce maintenance</p>
+                  </div>
+                </div>
+                <div className="autocare-block block2">
+                  <div className="icon">
+                    <img src="/asset3/images/care-icon.png" alt="care" className="img-fluid" />
+                  </div>
+                  <div className="text">
+                    <h6>Reduce
+                      Carbon Build Up</h6>
+                    <p>Better performance.
+                      Smoother running</p>
+                  </div>
+                </div>
+                <div className="autocare-block block3">
+                  <div className="icon">
+                    <img src="/asset3/images/care-icon.png" alt="care" className="img-fluid" />
+                  </div>
+                  <div className="text">
+                    <h6>Increases
+                      Horsepower</h6>
+                    <p>More overall
+                      power and torque.</p>
+                  </div>
+                </div>
+                <div className="autocare-block block4">
+                  <div className="icon">
+                    <img src="/asset3/images/care-icon.png" alt="care" className="img-fluid" />
+                  </div>
+                  <div className="text">
+                    <h6>Extends Life of Engine</h6>
+                    <p>Longer Life.
+                      Bigger Savings.</p>
+                  </div>
+                </div>
+                <div className="autocare-block block5">
+                  <div className="icon">
+                    <img src="/asset3/images/care-icon.png" alt="care" className="img-fluid" />
+                  </div>
+                  <div className="text">
+                    <h6>Cleaner Oil</h6>
+                    <p>Less wear and friction</p>
+                  </div>
+                </div>
+                <div className="autocare-block block6">
+                  <div className="icon">
+                    <img src="/asset3/images/care-icon.png" alt="care" className="img-fluid" />
+                  </div>
+                  <div className="text">
+                    <h6>Increase Fuel
+                      Economy</h6>
+                    <p>More miles to the gallon
+                      / Km to the liter.</p>
+                  </div>
+                </div>
+                <div className="autocare-block block7">
+                  <div className="icon">
+                    <img src="/asset3/images/care-icon.png" alt="care" className="img-fluid" />
+                  </div>
+                  <div className="text">
+                    <h6>Decreases harmful
+                      Emissions</h6>
+                    <p>Reduce your carbon
+                      footprint on the environment.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="auto-img">
+                <div className="lines">
+                  <div className="line line1" />
+                  <div className="line line2" />
+                  <div className="line line3" />
+                  <div className="line line4" />
+                </div>
+                <div className="circle">
+                  <img src="/asset3/images/circle.png" alt="circle" className="img-fluid" />
+                </div>
+                <div className="image d-none d-md-block">
+                  <img src="/asset3/images/product-img.png" alt="product-img" className="img-fluid" />
+                </div>
+                <div className="image d-flex d-md-none">
+                  <div className="img1">
+                    <img src="/asset3/images/pro1.png" alt="product-img" width={254} className="img-fluid" />
+                  </div>
+                  <div className="img2">
+                    <img src="/asset3/images/pro2.png" alt="product-img" width={155} className="img-fluid" />
+                  </div>
+                  <div className="img3">
+                    <img src="/asset3/images/pro3.png" alt="product-img" width={196} className="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="business-sec">
+          <div className="container">
+            <div className="main-title black-title">
+              <h2>Products you need. <span>A business you deserve.</span></h2>
+            </div>
+            <div className="row align-items-center">
+              <div className="col-sm-12 col-md-12 col-lg-7">
+                <div className="business-video">
+                  <div className="video-block" data-video="https://www.youtube.com/embed/FNhS5RhpKDg?autoplay=1&showinfo=0&modestbranding=1&rel=0&mute=1">
+                    <div className="v-poster">
+                      <img src="/img.webp" alt="video-bg" className="img-fluid" />
                     </div>
-                    <a href="javascript:void(0);" className="play-icon">
-                      <i className="far fa-play-circle fa-fw" />
+                    <iframe className="video embed-player slide-media" id="video" width={520} height={360} src frameBorder={0} allowTransparency="true" allowFullScreen muted="true" />
+                    <a href="javascript:void(0)" className="play-btn" id="play-button">
+                      <i className="fas fa-play" />
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="col-md-6 col-sm-12">
-                <div className="join-frm">
-                  <div className="join-block">
-                    <h2><span>Easy</span> TO JOIN AND SHARE</h2>
-                    <h3>Includes Complete Marketing System</h3>
-                    <div className="form-group">
-                      <label>First Name:</label>
-                      <input onChange={e => setFirstName(e.target.value)} value={firstName} type="text" name placeholder className="form-control" />
-                    </div>
-                    <div className="form-group">
-                      <label>Last Name:</label>
-                      <input onChange={e => setLastName(e.target.value)} value={lastName} type="text" name placeholder className="form-control" />
-                    </div>
-                    <div className="form-group">
-                      <label>Email:</label>
-                      <input onChange={e => setEmail(e.target.value)} value={email} type="text" name placeholder className="form-control" />
-                    </div>
-                    <div className="form-group">
-                      <label>Phone No:</label>
-                      <input onChange={e => setPhoneNumber(e.target.value)} value={phoneNumber} type="text" name placeholder className="form-control" />
-                    </div>
+              <div className="col-sm-12 col-md-12 col-lg-5">
+                <div className="business-form">
+                  <span>Start Your Business Today!</span>
+                  <h2>Our Vehicle is the second largest
+                    investment after our home</h2>
+                  <span>Fill out the form below for more information</span>
+                  <form method="post" action="">
 
-                    <h3>Submit your information below OR Skip it and JOIN NOW</h3>
-                    <button onClick={handleSubmit} type="submit">Save My Spot</button>
-                  </div>
+                    <input type="hidden" name="sponsor_username" defaultValue="{{ $sponsor }}" />
+                    <div className="form-group">
+                      <input type="text" className="form-control" onChange={e => setFirstName(e.target.value)} value={firstName} placeholder="Your first name" />
+                    </div>
+                    <div className="form-group">
+                      <input type="text" className="form-control" onChange={e => setLastName(e.target.value)} value={lastName} placeholder="Your last name" />
+                    </div>
+                    <div className="form-group">
+                      <input type="text" onChange={e => setPhoneNumber(e.target.value)} value={phoneNumber} className="form-control" placeholder="Phone Number" />
+                    </div>
+                    <div className="form-group">
+                      <input type="email" className="form-control" onChange={e => setEmail(e.target.value)} value={email} placeholder="Email Address" />
+                    </div>
+                    <p>Your Information will never be shared. Unsubscribe any time.</p>
+
+                    <button type="submit" onClick={handleSubmit} className="btn btn-primary">SUBMIT NOW</button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section className="quality-wrp">
+        </div>
+        <div className="benefits">
           <div className="container">
-            <h2>The HIGHEST quality products at the absolute <span>LOWEST</span><br /> prices with the <span>MAXIMUM</span> possible payout!</h2>
-            <div className="quality-tabs">
-              <ul className="nav nav-tabs" id="myTab" role="tablist">
-                <li className="nav-item" role="presentation">
-                  <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">FUEL TABS</button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">FOCUS</button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">BIO3X</button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button className="nav-link" id="contact-tab2" data-bs-toggle="tab" data-bs-target="#contact2" type="button" role="tab" aria-controls="contact2" aria-selected="false">Magnesium</button>
-                </li>
-              </ul>
-              <div className="tab-content" id="myTabContent">
-                <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <div className="quality-list">
-                    <div className="row">
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>5 Fuel Tabs<br />$24.00 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/proimg3.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box activebx">
-                          <div className="quality-hed">
-                            <h3>6 PATENTED Fuel Tabs</h3>
-                            <h5>Retail: <span>$24.00 </span></h5>
-                            <h5>Members Price: <span>$12.00</span></h5>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/proimg1.png" alt />
-                          </div>
-                          <div className="quality-dt">
-                            <p>Over 4 BILLION gallons of fuel treated. The ORIGINAL Fuel Tab. (Tetramethylbenzene Free)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>5 Fuel Tabs<br />$24.95 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/proimg2.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <div className="quality-list">
-                    <div className="row">
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>Alpha Brain<br />$67.47 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/alpha.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box activebx">
-                          <div className="quality-hed">
-                            <h3>FOCUS - Cognitive Enhancer</h3>
-                            <h5>Retail: <span>$59.95 </span></h5>
-                            <h5>Members Price: <span>$30.00</span></h5>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/focus.png" alt />
-                          </div>
-                          <div className="quality-dt">
-                            <p>Based on the latest Neural Science on Focus, Memory and Neuroprotective Ingredients</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>Qualia Mind <br />$86.00 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/qualia.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                  <div className="quality-list">
-                    <div className="row">
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>Primal Gut Health <br />$47.95 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/primal.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box activebx">
-                          <div className="quality-hed">
-                            <h3>Bio3X Ultimate Gut Support</h3>
-                            <h5>Retail: <span>$40.00 </span></h5>
-                            <h5>Members Price: <span>$20.00</span></h5>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/3x.png" alt />
-                          </div>
-                          <div className="quality-dt">
-                            <p>The most advanced gut health formula on the market. Contains ZERO live bacteria </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>Seed SynBiotic <br />$49.95 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/seed.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
-                  <div className="quality-list">
-                    <div className="row">
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>Only Magnesium<br />$17.95 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/live.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box activebx">
-                          <div className="quality-hed">
-                            <h3>Magnesium PLUS<br />Zinc, D3 and B6</h3>
-                            <h5>Retail: <span>$16.95 </span></h5>
-                            <h5>Members Price: <span>$10.00</span></h5>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/mag.png" alt />
-                          </div>
-                          <div className="quality-dt">
-                            <p>Our Magnesium includes Zinc, D3 and B6 and is the most bioavailable form of Magnesium available</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 col-sm-12">
-                        <div className="quality-box">
-                          <div className="quality-hed">
-                            <h3>Only Magnesium<br />$19.95 Retail</h3>
-                          </div>
-                          <div className="quality-img">
-                            <img src="/images/comag.png" alt />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="money-back-wrp">
-          <div className="container">
-            <h2>Our Matrix automatically places everyone that joins <span>AFTER</span><br /> you <span>BELOW</span> you to <span>MAXIMIZE</span> earnings and support</h2>
             <div className="row">
-              <div className="col-md-7 col-sm-12">
-                <div className="money-data">
-                  <h3>No Ridiculous Qualifiers</h3>
-                  <ul>
-                    <li>Up to $3,279.00 per month. No sponsoring </li>
-                    <li>10 Levels of Fast Start Bonuses</li>
-                    <li>10 Levels of Retail Bonuses</li>
-                    <li>10 Levels of Wholesale Bonuses</li>
-                    <li>5 Levels of Check Match Bonuses</li>
-                    <li>3 x 10 FORCED Matrix = 88,572<br /> (Compare to a 2 x 15 with only 65,534)</li>
-                  </ul>
+              <div className="col-sm-12 col-md-12 col-lg-6">
+                <div className="row">
+                  <div className="col-sm-12 col-md-6 col-lg-12">
+                    <div className="benefit-left">
+                      <h2>You Could Earn:</h2>
+                      <div className="benefit-list">
+                        <div className="b-label">
+                          BENEFITS
+                        </div>
+                        <div className="b-block">
+                          <div className="icon">
+                            <img src="/asset3/images/icon1.png" alt="icon" width={37} className="img-fluid" />
+                          </div>
+                          <h3>Up to 35% commissions</h3>
+                        </div>
+                        <div className="b-block">
+                          <div className="icon">
+                            <img src="/asset3/images/icon2.png" alt="icon" width={36} className="img-fluid" />
+                          </div>
+                          <h3>Bonuses and free vacations</h3>
+                        </div>
+                        <div className="b-block">
+                          <div className="icon">
+                            <img src="/asset3/images/icon3.png" alt="icon" width={34} className="img-fluid" />
+                          </div>
+                          <h3>Residual commissions on all re-orders</h3>
+                        </div>
+                        <div className="b-block">
+                          <div className="icon">
+                            <img src="/asset3/images/icon4.png" alt="icon" width={23} className="img-fluid" />
+                          </div>
+                          <h3>Free Products</h3>
+                        </div>
+                        <div className="b-block">
+                          <div className="icon">
+                            <img src="/asset3/images/icon5.png" alt="icon" width={38} className="img-fluid" />
+                          </div>
+                          <h3>Fuel Savings Plus</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-sm-12 col-md-6 col-lg-12">
+                    <div className="benefit-left">
+                      <div className="get-list">
+                        <h2>What you get:</h2>
+                        <ul>
+                          <li>Free training and support</li>
+                          <li>Free e-commerce website</li>
+                          <li>Free Landing pages and marketing system</li>
+                          <li>Free backoffice and management tools</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="col-md-5 col-sm-12">
-                <div className="money-back-img">
-                  <img src="/images/complogo2.png" alt />
+              <div className="col-sm-12 col-md-12 col-lg-6">
+                <div className="benefit-image">
+                  <img src="/asset3/images/benefit.png" alt="benefit" className="img-fluid" />
+                  <div className="bg-img">
+                    <img src="/asset3/images/img-b.png" alt="benefit" className="img-fluid" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <footer>
-          <div className="container">
-            <h6>Training by million dollar producers. Marketing systems that do the heavy lifting. E-commerce platform that automatically sets up your FREE commission  generating online store.</h6>
-          </div>
-        </footer>
+        </div>
       </div>
 
 
@@ -414,6 +381,6 @@ export default function Home() {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </HomeLayout>
+    </HomeLayout >
   )
 }
