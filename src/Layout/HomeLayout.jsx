@@ -1,7 +1,32 @@
+import Axios from '@/Helpers/Axios'
+import { Avatar, Box, Flex, Text } from '@chakra-ui/react'
+import Cookies from 'js-cookie'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function HomeLayout({ children }) {
+
+
+    const [sponsor, setSponsor] = useState(null)
+
+    useEffect(() => {
+        async function getSponsor() {
+
+            const username = Cookies.get('sponsor')
+
+            const res = await Axios.get(`/sponsor/validate/${username}`)
+
+            // console.log('Sponsor data: ', res.data)
+
+            if (res?.data?.ok) {
+                setSponsor(res?.data?.user)
+            }
+        }
+
+        getSponsor()
+    }, [])
+
+
     return (
         <>
             <Head>
@@ -25,6 +50,17 @@ export default function HomeLayout({ children }) {
             </Head>
 
             {children}
+
+            {sponsor && <Box as='section' position={'fixed'} zIndex='9999' bottom='12px' left='12px' bg='white' shadow={'md'} px='3' py={1} rounded='full'>
+                <Flex gap={2} alignItems='center'>
+                    <Avatar size='sm' src={sponsor?.avatar} />
+                    <Box lineHeight={1}>
+                        <Text mb={0} lineHeight={1} fontSize={'9px'} color='gray.500'>Referred by</Text>
+                        <Text as={'span'} fontSize={'14px'}>{sponsor.full_name}</Text>
+                    </Box>
+
+                </Flex>
+            </Box>}
         </>
     )
 }
