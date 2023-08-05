@@ -130,7 +130,7 @@ export default function Home() {
         <div className="main-banner">
           <div className="container">
             <div className="main-title">
-              <h2><span>Get YOUR</span> piece of the <span>$13 BILION</span> AutoCare Industry</h2>
+              <h2><span>Get YOUR</span> piece of the <span>$13 BILLION</span> AutoCare Industry</h2>
             </div>
             <div className="autocare">
               <div className="autocare-list">
