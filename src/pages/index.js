@@ -247,7 +247,7 @@ export default function Home() {
                 <div className="business-video">
                   <div className="video-block" data-video="https://www.youtube.com/embed/FNhS5RhpKDg?autoplay=1&showinfo=0&modestbranding=1&rel=0&mute=1">
                     <div className="v-poster">
-                      <img src="/img.webp" alt="video-bg" className="img-fluid" />
+                      <img src="/video_banner.jpeg" alt="video-bg" className="img-fluid" />
                     </div>
                     <iframe className="video embed-player slide-media" id="video" width={520} height={360} src frameBorder={0} allowTransparency="true" allowFullScreen muted="true" />
                     <a href="javascript:void(0)" className="play-btn" id="play-button">
