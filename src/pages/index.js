@@ -97,7 +97,14 @@ export default function Home() {
 
     if (res?.data?.ok) {
       Cookies.remove('sponsor')
-      window.location.href = `https://shopxcelerate.com/${sponsor}`
+
+      if (res?.data?.credentials) {
+        const credentials = res?.data?.credentials
+        return window.location.href = `https://shopxcelerate.com/redirected?xcelerate_id=${credentials?.xcelerate_id}&xcelerate_pass=${credentials?.xcelerate_pass}&godesana_id=${credentials?.godesana_id}&godesana_pass=${credentials?.godesana_pass}`
+      } else {
+        window.location.href = `https://shopxcelerate.com/`
+      }
+
     } else {
       toast({
         title: 'Oopss!',
@@ -219,10 +226,10 @@ export default function Home() {
                 <div className="circle">
                   <img src="/asset3/images/circle.png" alt="circle" className="img-fluid" />
                 </div>
-                <div style={{paddingLeft: '120px'}} className="image d-none d-md-block">
+                <div style={{ paddingLeft: '120px' }} className="image d-none d-md-block">
                   <img src="/asset3/images/product-img.png" alt="product-img" className="img-fluid" />
                 </div>
-                
+
                 <div className="image d-flex d-md-none">
                   <div className="img1">
                     <img src="/asset3/images/pro1.png" alt="product-img" width={254} className="img-fluid" />

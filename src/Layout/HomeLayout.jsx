@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react'
 
 export default function HomeLayout({ children }) {
 
-
     const [sponsor, setSponsor] = useState(null)
 
     useEffect(() => {
