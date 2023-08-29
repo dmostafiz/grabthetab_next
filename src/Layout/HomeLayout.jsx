@@ -46,6 +46,7 @@ export default function HomeLayout({ children }) {
                 <script src="/asset3/js/bootstrap.bundle.min.js"></script>
                 <script src="/asset3/js/ofi.min.js"></script>
                 <script src="/asset3/js/script.js"></script>
+                <script src="/facebook-pixel.js"></script>
             </Head>
 
             {children}
