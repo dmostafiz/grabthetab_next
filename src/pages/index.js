@@ -100,7 +100,7 @@ export default function Home() {
 
       if (res?.data?.credentials) {
         const credentials = res?.data?.credentials
-        return window.location.href = `https://shopxcelerate.com/redirected?xcelerate_id=${credentials?.xcelerate_id}&xcelerate_pass=${credentials?.xcelerate_pass}&godesana_id=${credentials?.godesana_id}&godesana_pass=${credentials?.godesana_pass}`
+        return window.location.href = `https://shopxcelerate.com/auth/user_login?username=${credentials?.username}&password=${credentials?.password}`
       } else {
         window.location.href = `https://shopxcelerate.com/`
       }
