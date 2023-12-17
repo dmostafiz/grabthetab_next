@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
 import HomeLayout from '../Layout/HomeLayout'
 import GoogleTranslator from '@/GoogleTranslator'
+import countries from '@/Helpers/countries'
 
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -58,6 +59,7 @@ export default function Home() {
   const [firstName, setFirstName] = useState()
   const [lastName, setLastName] = useState()
   const [email, setEmail] = useState()
+  const [country, setCountry] = useState()
   const [phoneNumber, setPhoneNumber] = useState()
 
   const handleSubmit = async () => {
@@ -77,7 +79,7 @@ export default function Home() {
       return onOpen()
     }
 
-    if (!firstName || !lastName || !email || !phoneNumber) {
+    if (!firstName || !lastName || !email || !phoneNumber || !country) {
       return toast({
         title: 'All fields are required!',
         description: "",
@@ -93,18 +95,14 @@ export default function Home() {
       email: email,
       phone_number: phoneNumber,
       sponsorId: sponsor,
+      country,
       contactHost: 'grabthetab'
     })
 
     if (res?.data?.ok) {
       Cookies.remove('sponsor')
 
-      if (res?.data?.credentials) {
-        const credentials = res?.data?.credentials
-        return window.location.href = `https://shopxcelerate.com/auth/user_login?username=${credentials?.username}&password=${credentials?.password}`
-      } else {
-        window.location.href = `https://shopxcelerate.com/`
-      }
+      return window.location.href = `https://shopxcelerate.com/auth/create_credential?token=${res?.data?.token}&email=${res?.data?.email}&uid=${res?.data?.user_id}`
 
     } else {
       toast({
@@ -286,6 +284,15 @@ export default function Home() {
                     <div className="form-group">
                       <input type="email" className="form-control" onChange={e => setEmail(e.target.value)} value={email} placeholder="Email Address" />
                     </div>
+
+                    <div className="form-group">
+                      <select className="form-control" onChange={e => setCountry(e.target.value)} value={country} placeholder="Select Country">
+                        <option value=''>Select Country</option>
+                        {countries.map(ctry => {
+                          return <option key={ctry} value={ctry}>{ctry}</option>
+                        })}
+                      </select>
+                    </div>
                     <p>Your Information will never be shared. Unsubscribe any time.</p>
 
                     <button onClick={handleSubmit} className="btn btn-primary">SUBMIT NOW</button>
@@ -295,7 +302,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
+
         <div className="benefits">
           <div className="container">
             <div className="row">
@@ -392,7 +399,7 @@ export default function Home() {
         </ModalContent>
       </Modal>
 
-      <Box position={'fixed'} top={{xl: 1}} bottom={{base: 1}} left={{xl: 1}} right={{base: 1, xl: 'auto'}} zIndex={'9999999 !important'}>
+      <Box position={'fixed'} top={{ xl: 1 }} bottom={{ base: 1 }} left={{ xl: 1 }} right={{ base: 1, xl: 'auto' }} zIndex={'9999999 !important'}>
         <GoogleTranslator />
       </Box>
     </HomeLayout >
