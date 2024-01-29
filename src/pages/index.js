@@ -120,7 +120,7 @@ export default function Home() {
     <HomeLayout>
       <header className="header" style={{ padding: 10 }}>
         <div style={{ padding: '0 20px' }}>
-          <img src="https://xceleratefueltabs.com/landing/images/logo.png" />
+          <img src="https://www.shopxcelerate.com/main-logo-white.png" />
           <a href="/login" style={{ float: 'right', padding: 9, background: 'white', textDecoration: 'none', color: 'black', borderRadius: 10, marginTop: 10 }}>Login
             Now</a>
         </div>
