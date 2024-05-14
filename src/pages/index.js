@@ -1,5 +1,5 @@
 import Axios from '@/Helpers/Axios'
-import { Box, Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, useToast } from '@chakra-ui/react'
+import {Image, Box, Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, useToast } from '@chakra-ui/react'
 import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
 import HomeLayout from '../Layout/HomeLayout'
@@ -120,7 +120,7 @@ export default function Home() {
     <HomeLayout>
       <header className="header" style={{ padding: 10 }}>
         <div style={{ padding: '0 20px' }}>
-          <img src="https://www.shopxcelerate.com/main-logo-white.png" />
+          <Image w={'200px'} src="https://www.shopxcelerate.com/main-logo-white.png" />
           <a href="/login" style={{ float: 'right', padding: 9, background: 'white', textDecoration: 'none', color: 'black', borderRadius: 10, marginTop: 10 }}>Login
             Now</a>
         </div>
@@ -392,7 +392,7 @@ export default function Home() {
         </ModalContent>
       </Modal>
 
-      <Box position={'fixed'} top={{ xl: 1 }} bottom={{ base: 1 }} left={{ xl: 1 }} right={{ base: 1, xl: 'auto' }} zIndex={'9999999 !important'}>
+      <Box position={'fixed'} top={{ xl: 1 }} bottom={{ base: 1 }} right={{ xl: 1 }} left={{ base: 1, xl: 'auto' }} zIndex={'9999999 !important'}>
         <GoogleTranslator />
       </Box>
     </HomeLayout >
